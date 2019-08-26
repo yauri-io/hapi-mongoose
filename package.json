@@ -4,7 +4,7 @@
   "description": "Mongoose plugin for HapiJS",
   "main": "lib/index.js",
   "scripts": {
-    "test": "lab -v -M 5000 -t 90 -a @hapi/code -L"
+    "test": "lab -c -v -M 5000 -t 90 -a @hapi/code -L"
   },
   "repository": {
     "type": "git",
