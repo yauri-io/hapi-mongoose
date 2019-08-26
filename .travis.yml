@@ -13,13 +13,13 @@ env:
     - CC_TEST_REPORTER_ID=e46d1c1f70493cdab0c55093b133c742c9d824f07c4bd2fe9d069abf615443e6
 
 before_script:
-  - npm install -g nyc
+  - npm install -g npx
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
   - chmod +x ./cc-test-reporter
   - ./cc-test-reporter before-build
 
 script:
-  - nyc --reporter=lcov npm test
+  - npx nyc --reporter=lcov npm test
 
 after_script:
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
