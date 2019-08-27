@@ -50,13 +50,18 @@ const getUserModel = (hmongoose) => {
 
 const createUserHandler = async (request) => {
 
-    const {userId} = request.params;
+    const {firstName, lastName} = request.payload;
     const {hmongoose} = request.server; // mongoose exposed in server object as hmongoose
     const userModel = getUserModel(hmongoose);
     
+    const newUser = new userModel({
+        firstName,
+        lastName
+    });
+
     try {
 
-        const result = await userModel.findOne({  _id: new ObjectID(userId) });
+        const result = await newUser.save();
         return result;
     }
     catch (err) {
