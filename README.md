@@ -20,11 +20,6 @@ npm install --save @y-io/hapi-mongoose
 const Hapi = require('@hapi/hapi');
 const Boom = require('@hapi/boom');
 
-const mongooseOpts = {
-    connString: 'mongodb://localhost:27017/test',
-    options: {} // the default is using example in http://mongoosejs.com/docs/connections.html#options
-};
-
 // this is just a simple example on how to create a model
 // in real implementation, the model must be instantiate once only
 const getUserModel = (hmongoose) => {
@@ -75,6 +70,11 @@ const startServer = async () => {
     
     const server = new Hapi.Server();
 
+    const mongooseOpts = {
+        connString: 'mongodb://localhost:27017/test',
+        options: {} // the default is using example in http://mongoosejs.com/docs/connections.html#options
+    };
+
     await server.register({
         plugin: require('@y-io/hapi-mongoose'),
         options: mongooseOpts
@@ -109,4 +109,4 @@ startServer()
 ## Options
 
 * `connString` - A [MongoDB connection string](https://docs.mongodb.org/v4.0/reference/connection-string/).
-* `options` - A JavaScript object with [Mongoose connection options](http://mongoosejs.com/docs/connections.html#options).
+* `options` - A JavaScript object with [Mongoose connection options](https://mongoosejs.com/docs/connections.html#options).
