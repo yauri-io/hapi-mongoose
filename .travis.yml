@@ -18,6 +18,7 @@ before_script:
   - ./cc-test-reporter before-build
 
 script:
+  - npm install @hapi/hapi
   - npm test
 
 after_script:
