@@ -19,6 +19,7 @@ npm install --save @y-io/hapi-mongoose
 
 const Hapi = require('@hapi/hapi');
 const Boom = require('@hapi/boom');
+const Joi = require('@hapi/joi');
 
 // this is just a simple example on how to create a model
 // in real implementation, the model must be instantiate once only
@@ -46,7 +47,7 @@ const getUserModel = (hmongoose) => {
 const createUserHandler = async (request) => {
 
     const {firstName, lastName} = request.payload;
-    const {hmongoose} = request.server; // mongoose exposed in server object as hmongoose
+    const {hmongoose, log} = request.server; // mongoose exposed in server object as hmongoose
     const userModel = getUserModel(hmongoose);
     
     const newUser = new userModel({
@@ -61,7 +62,7 @@ const createUserHandler = async (request) => {
     }
     catch (err) {
 
-        request.server.log(['error'], err);
+        log(['error'], err);
         return Boom.internal();
     }
 } ;
