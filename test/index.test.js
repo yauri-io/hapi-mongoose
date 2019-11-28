@@ -39,7 +39,6 @@ describe('Hapi server', () => {
             });
         }
         catch (err) {
-
             expect(err).to.exist();
         }
     });
@@ -162,43 +161,28 @@ describe('Hapi server', () => {
 
     it('should disconnect when server stop', async () => {
 
-
         await server.register({
             plugin: require('../'),
             options: {
                 connString
             }
         });
+
         await server.initialize();
-        await server.stop();
 
         server.events.on('log', (entry) => {
 
-            expect(entry.tags).to.equal(['hmongoose', 'warn']);
-            expect(entry.data).to.equal('disconnected');
-        });
+            if (entry.data === 'disconnecting') {
+                expect(entry.tags).to.equal(['hmongoose', 'info']);
+                expect(entry.data).to.equal('disconnecting');
+            }
 
-        await Hoek.wait(300);
-
-    });
-
-    it('should disconnect when server stop', async () => {
-
-
-        await server.register({
-            plugin: require('../'),
-            options: {
-                connString
+            if (entry.data === 'disconnected') {
+                expect(entry.tags).to.equal(['hmongoose', 'warn']);
+                expect(entry.data).to.equal('disconnected');
             }
         });
-        await server.initialize();
         await server.stop();
-
-        server.events.on('log', (entry) => {
-
-            expect(entry.tags).to.equal(['hmongoose', 'warn']);
-            expect(entry.data).to.equal('disconnected');
-        });
 
         await Hoek.wait(300);
 
