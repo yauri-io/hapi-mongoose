@@ -22,13 +22,13 @@
   "homepage": "https://github.com/yauri-io/hapi-mongoose#readme",
   "dependencies": {
     "@hapi/hapi": "^18.4.0",
-    "@hapi/hoek": "^8.3.2",
-    "@hapi/joi": "^15.1.1",
+    "@hapi/hoek": "^8.5.0",
+    "@hapi/joi": "^16.1.8",
     "bluebird": "^3.7.1",
-    "mongoose": "^5.7.6"
+    "mongoose": "^5.7.12"
   },
   "peerDependencies": {
-    "@hapi/hapi": ">= 18.0.0"
+    "@hapi/hapi": ">=18.4.0"
   },
   "devDependencies": {
     "@hapi/code": "^7.0.0",
