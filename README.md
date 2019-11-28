@@ -107,6 +107,14 @@ startServer()
     });
 ```
 
+## Note
+About warning
+```
+(node:21295) DeprecationWarning: current Server Discovery and Monitoring engine is deprecated, and will be removed in a future version. To use the new Server Discover and Monitoring engine, pass option { useUnifiedTopology: true } to the MongoClient constructor.
+```
+To disable the warning, please pass option {useUnifiedTopology: true} but it would create issue when the connection string is invalid / MongoDB server is unreachable. There will be no error thrown until timeout.
+
+
 ## Options
 
 * `connString` - A [MongoDB connection string](https://docs.mongodb.org/v4.0/reference/connection-string/).
