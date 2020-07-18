@@ -21,19 +21,18 @@
   },
   "homepage": "https://github.com/yauri-io/hapi-mongoose#readme",
   "dependencies": {
-    "@hapi/hapi": "^18.4.0",
-    "@hapi/hoek": "^8.5.0",
-    "@hapi/joi": "^16.1.8",
-    "bluebird": "^3.7.1",
-    "mongoose": "^5.7.12"
+    "@hapi/hoek": "^9.0.4",
+    "@hapi/joi": "^17.1.1",
+    "bluebird": "^3.7.2",
+    "mongoose": "^5.9.25"
   },
   "peerDependencies": {
-    "@hapi/hapi": ">=18.4.0"
+    "@hapi/hapi": ">=19.2.0"
   },
   "devDependencies": {
-    "@hapi/code": "^7.0.0",
-    "@hapi/eslint-config-hapi": "^12.3.0",
-    "@hapi/eslint-plugin-hapi": "^4.3.4",
-    "@hapi/lab": "^21.0.0"
+    "@hapi/code": "^8.0.1",
+    "@hapi/eslint-config-hapi": "^13.0.2",
+    "@hapi/eslint-plugin-hapi": "^4.3.5",
+    "@hapi/lab": "^22.0.4"
   }
 }

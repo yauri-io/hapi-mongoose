@@ -107,6 +107,9 @@ startServer()
     });
 ```
 
+## Test
+Please install the peer dependencies manually to be able to run test.
+
 ## Note
 About warning
 ```
