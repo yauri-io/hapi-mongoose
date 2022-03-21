@@ -1,6 +1,6 @@
 {
   "name": "@y-io/hapi-mongoose",
-  "version": "1.2.0",
+  "version": "2.0.0",
   "description": "Mongoose plugin for HapiJS",
   "main": "lib/index.js",
   "scripts": {
