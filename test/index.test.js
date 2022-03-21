@@ -55,7 +55,6 @@ describe('Hapi server', () => {
             });
         }
         catch (err) {
-
             expect(err).to.exist();
         }
     });
@@ -106,14 +105,7 @@ describe('Hapi server', () => {
             options: {
                 connString,
                 options: {
-                    useNewUrlParser: true,
-                    useCreateIndex: true,
-                    useFindAndModify: false,
                     autoIndex: true,
-                    reconnectTries: 200,
-                    reconnectInterval: 500, // in milliseconds
-                    poolSize: 10,
-                    bufferMaxEntries: 0,
                     connectTimeoutMS: 10000, // in milliseconds
                     socketTimeoutMS: 45000 // in milliseconds
                 }
