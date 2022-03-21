@@ -19,7 +19,7 @@ npm install --save @y-io/hapi-mongoose
 
 const Hapi = require('@hapi/hapi');
 const Boom = require('@hapi/boom');
-const Joi = require('@hapi/joi');
+const Joi = require('joi');
 
 // this is just a simple example on how to create a model
 // in real implementation, the model must be instantiate once only

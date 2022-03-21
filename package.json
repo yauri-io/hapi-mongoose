@@ -22,8 +22,8 @@
   "homepage": "https://github.com/yauri-io/hapi-mongoose#readme",
   "dependencies": {
     "@hapi/hoek": "^9.2.1",
-    "@hapi/joi": "^17.1.1",
     "bluebird": "^3.7.2",
+    "joi": "^17.6.0",
     "mongoose": "^6.2.7"
   },
   "peerDependencies": {
